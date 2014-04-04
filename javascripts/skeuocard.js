@@ -1,15 +1,3 @@
-/*
-"Skeuocard" -- A Skeuomorphic Credit-Card Input Enhancement
-@description Skeuocard is a skeuomorphic credit card input plugin, supporting 
-             progressive enhancement. It renders a credit-card input which 
-             behaves similarly to a physical credit card.
-@author Ken Keiter <ken@kenkeiter.com>
-@updated 2013-07-25
-@website http://kenkeiter.com/
-@exports [window.Skeuocard]
-*/
-
-
 (function() {
   var $, Skeuocard, visaProduct,
     __slice = [].slice,
@@ -52,9 +40,9 @@
         initialValues: {},
         validationState: {},
         strings: {
-          hiddenFaceFillPrompt: "<strong>Click here</strong> to <br>fill in the other side.",
-          hiddenFaceErrorWarning: "There's a problem on the other side.",
-          hiddenFaceSwitchPrompt: "Forget something?<br> Flip the card over."
+          hiddenFaceFillPrompt: "<strong>Lütfen buraya</strong><br>tıklayın.",
+          hiddenFaceErrorWarning: "Kartın arkasında bir problem var.",
+          hiddenFaceSwitchPrompt: "Kartın ön yüzüne<br>dönün."
         }
       };
       this.options = $.extend(optDefaults, opts);
@@ -87,7 +75,7 @@
     };
 
     /*
-    Transform the elements within the container, conforming the DOM so that it 
+    Transform the elements within the container, conforming the DOM so that it
     becomes styleable, and that the underlying inputs are hidden.
     */
 
@@ -134,7 +122,7 @@
         }),
         name: new this.TextInputView({
           "class": "cc-name",
-          placeholder: "YOUR NAME"
+          placeholder: "ADINIZ SOYADINIZ"
         }),
         cvc: new this.TextInputView({
           "class": "cc-cvc",
@@ -152,7 +140,7 @@
     };
 
     /*
-    Import implicit initialization options from the DOM. Brings in things like 
+    Import implicit initialization options from the DOM. Brings in things like
     the accepted card type, initial validation state, existing values, etc.
     */
 
@@ -386,7 +374,7 @@
     };
 
     /*
-    Assert rendering changes necessary for the current product. Passing a null 
+    Assert rendering changes necessary for the current product. Passing a null
     value instead of a product will revert the card to a generic state.
     */
 
@@ -515,7 +503,7 @@
 
   /*
   Skeuocard::FlipTabView
-  Handles rendering of the "flip button" control and its various warning and 
+  Handles rendering of the "flip button" control and its various warning and
   prompt states.
   */
 
@@ -756,9 +744,9 @@
     };
 
     SegmentedCardNumberInputView.prototype._handleModifiedKeyDown = function(e) {
-      var char;
-      char = String.fromCharCode(e.which);
-      switch (char) {
+      var charvar;
+        charvar = String.fromCharCode(e.which);
+      switch (charvar) {
         case 'a':
         case 'A':
           this._beginSelectAll();
@@ -1042,15 +1030,15 @@
     };
 
     ExpirationInputView.prototype.setPattern = function(pattern) {
-      var char, groupings, i, patternParts, _currentLength, _i, _len;
+      var charvar, groupings, i, patternParts, _currentLength, _i, _len;
       groupings = [];
       patternParts = pattern.split('');
       _currentLength = 0;
       for (i = _i = 0, _len = patternParts.length; _i < _len; i = ++_i) {
-        char = patternParts[i];
+        charvar = patternParts[i];
         _currentLength++;
-        if (patternParts[i + 1] !== char) {
-          groupings.push([_currentLength, char]);
+        if (patternParts[i + 1] !== charvar) {
+          groupings.push([_currentLength, charvar]);
           _currentLength = 0;
         }
       }
@@ -1684,4 +1672,217 @@
     }
   });
 
+  Skeuocard.prototype.CardProduct.create({
+    pattern: /^5[1-5]/,
+    companyName: "Mastercard",
+    companyShortname: "mastercard",
+    cardNumberGrouping: [4, 4, 4, 4],
+    cardNumberLength: [16],
+    expirationFormat: "MM/YY",
+    validateLuhn: true,
+    cvcLength: 3,
+    layout: {
+      number: 'front',
+      exp: 'front',
+      name: 'front',
+      cvc: 'back'
+    }
+  });
+
+
+  garantiMaster = Skeuocard.prototype.CardProduct.firstMatchingShortname('mastercard');
+  garantiMaster.createVariation({
+    pattern: /^(514915|520097|520922|520940|520988|521368|521824|521825|521832|522204|528939|528956|533169|534261|540036|540037|540226|540227|540669|540709|541865|542030|544078|545102|546001|547302|552095|553130|554796|554960|557023|557945|558699)/,
+    issuingAuthority: "Garanti",
+    issuerName: "Garanti Master Card",
+    issuerShortname: "master-garanti",
+    layout: {
+      name: 'front',
+      number: 'front',
+      exp: 'front',
+      cvc: 'back'
+    }
+  });
+
+  isbankMaster = Skeuocard.prototype.CardProduct.firstMatchingShortname('mastercard');
+  isbankMaster.createVariation({
+    pattern: /^(510152|540667|540668|543771|552096|553058)/,
+    issuingAuthority: "isbank",
+    issuerName: "isbank Master Card",
+    issuerShortname: "master-isbank",
+    layout: {
+      name: 'front',
+      number: 'front',
+      exp: 'front',
+      cvc: 'back'
+    }
+  });
+
+  akbankMaster = Skeuocard.prototype.CardProduct.firstMatchingShortname('mastercard');
+  akbankMaster.createVariation({
+    pattern: /^(512754|520932|521807|524347|542110|552608|552609|553056|557113|557829)/,
+    issuingAuthority: "akbank",
+    issuerName: "akbank Master Card",
+    issuerShortname: "master-akbank",
+    layout: {
+      name: 'front',
+      number: 'front',
+      exp: 'front',
+      cvc: 'back'
+    }
+  });
+
+  yapikrediMaster = Skeuocard.prototype.CardProduct.firstMatchingShortname('mastercard');
+  yapikrediMaster.createVariation({
+    pattern: /^(510054|540061|540062|540063|540122|540129|542117|545103|552645|552659|554422)/,
+    issuingAuthority: "yapikredi",
+    issuerName: "yapikredi Master Card",
+    issuerShortname: "master-yapikredi",
+    layout: {
+      name: 'front',
+      number: 'front',
+      exp: 'front',
+      cvc: 'back'
+    }
+  });
+
+  ingbankMaster = Skeuocard.prototype.CardProduct.firstMatchingShortname('mastercard');
+  ingbankMaster.createVariation({
+    pattern: /^(510151|532443|540024|540025|542029|542605|542965|542967|547765|548819|554297|554570)/,
+    issuingAuthority: "ing",
+    issuerName: "ing Master Card",
+    issuerShortname: "master-ing",
+    layout: {
+      name: 'front',
+      number: 'front',
+      exp: 'front',
+      cvc: 'back'
+    }
+  });
+
+  hsbcMaster = Skeuocard.prototype.CardProduct.firstMatchingShortname('mastercard');
+  hsbcMaster.createVariation({
+    pattern: /^(510005|512651|519399|521045|522054|525413|525795|540643|542254|545183|550472|550473|552143|556030|556031|556033|556034|556665)/,
+    issuingAuthority: "hsbc",
+    issuerName: "hsbc Master Card",
+    issuerShortname: "master-hsbc",
+    layout: {
+      name: 'front',
+      number: 'front',
+      exp: 'front',
+      cvc: 'back'
+    }
+  });
+
+  denizbankMaster = Skeuocard.prototype.CardProduct.firstMatchingShortname('mastercard');
+  denizbankMaster.createVariation({
+    pattern: /^(510063|510118|510119|512017|512117|514924|520019|520303|543358|543400|543427|546764|554483|558514)/,
+    issuingAuthority: "deniz",
+    issuerName: "deniz Master Card",
+    issuerShortname: "master-deniz",
+    layout: {
+      name: 'front',
+      number: 'front',
+      exp: 'front',
+      cvc: 'back'
+    }
+  });
+
+  garantiVisa = Skeuocard.prototype.CardProduct.firstMatchingShortname('visa');
+  garantiVisa.createVariation({
+    pattern: /^(403280|403666|404308|413836|426886|426887|426888|427314|427315|428220|428221|432154|448472|461668|462274|467293|467294|467295|474151|482489|482490|482491|486567|487074|487075|489478|490175|492186|492187|492193|493845)/,
+    issuingAuthority: "garanti",
+    issuerName: "garanti visa Card",
+    issuerShortname: "visa-garanti",
+    layout: {
+      name: 'front',
+      number: 'front',
+      exp: 'front',
+      cvc: 'back'
+    }
+  });
+
+  isbankVisa = Skeuocard.prototype.CardProduct.firstMatchingShortname('visa');
+  isbankVisa.createVariation({
+    pattern: /^(418342|418343|418344|418345|450803|454318|454358|454359|454360)/,
+    issuingAuthority: "isbank",
+    issuerName: "isbank visa Card",
+    issuerShortname: "visa-isbank",
+    layout: {
+      name: 'front',
+      number: 'front',
+      exp: 'front',
+      cvc: 'back'
+    }
+  });
+
+  akbankVisa = Skeuocard.prototype.CardProduct.firstMatchingShortname('visa');
+  akbankVisa.createVariation({
+    pattern: /^(413252|425669|432071|432072|435508|435509|493837)/,
+    issuingAuthority: "akbank",
+    issuerName: "akbank visa Card",
+    issuerShortname: "visa-akbank",
+    layout: {
+      name: 'front',
+      number: 'front',
+      exp: 'front',
+      cvc: 'back'
+    }
+  });
+
+  yapikrediVisa = Skeuocard.prototype.CardProduct.firstMatchingShortname('visa');
+  yapikrediVisa.createVariation({
+    pattern: /^(404809|446212|450634|455359|477959|479794|479795|491205|491206|492128|492130|492131)/,
+    issuingAuthority: "yapikredi",
+    issuerName: "yapikredi visa Card",
+    issuerShortname: "visa-yapikredi",
+    layout: {
+      name: 'front',
+      number: 'front',
+      exp: 'front',
+      cvc: 'back'
+    }
+  });
+
+  ingbankVisa = Skeuocard.prototype.CardProduct.firstMatchingShortname('visa');
+  ingbankVisa.createVariation({
+    pattern: /^(400684|408579|414070|420322|420323|420324|455571|480296|490805|490806|490807)/,
+    issuingAuthority: "ing",
+    issuerName: "ing visa Card",
+    issuerShortname: "visa-ing",
+    layout: {
+      name: 'front',
+      number: 'front',
+      exp: 'front',
+      cvc: 'back'
+    }
+  });
+
+  hsbcVisa = Skeuocard.prototype.CardProduct.firstMatchingShortname('visa');
+  hsbcVisa.createVariation({
+    pattern: /^(405913|405917|405918|409071|422629|424909|428240|496019)/,
+    issuingAuthority: "hsbc",
+    issuerName: "hsbc visa Card",
+    issuerShortname: "visa-hsbc",
+    layout: {
+      name: 'front',
+      number: 'front',
+      exp: 'front',
+      cvc: 'back'
+    }
+  });
+
+  denizbankVisa = Skeuocard.prototype.CardProduct.firstMatchingShortname('visa');
+  denizbankVisa.createVariation({
+    pattern: /^(403134|408625|409070|411924|423667|424360|424361|441139|460345|460347|462276|472914|489456)/,
+    issuingAuthority: "deniz",
+    issuerName: "deniz visa Card",
+    issuerShortname: "visa-deniz",
+    layout: {
+      name: 'front',
+      number: 'front',
+      exp: 'front',
+      cvc: 'back'
+    }
+  });
 }).call(this);

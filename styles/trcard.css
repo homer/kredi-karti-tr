@@ -1,0 +1,59 @@
+.skeuocard.product-mastercard.issuer-master-garanti .face.front{
+    background-image: url(../images/issuers/master-garanti-front.png), url(../images/card-front-background.png);
+}
+.skeuocard.product-mastercard.issuer-master-isbank .face.front{
+    background-image: url(../images/issuers/master-isbank-front.png), url(../images/card-front-background.png);
+}
+.skeuocard.product-mastercard.issuer-master-akbank .face.front{
+    background-image: url(../images/issuers/master-akbank-front.png), url(../images/card-front-background.png);
+}
+.skeuocard.product-mastercard.issuer-master-yapikredi .face.front{
+    background-image: url(../images/issuers/master-yapikredi-front.png), url(../images/card-front-background.png);
+}
+.skeuocard.product-mastercard.issuer-master-ing .face.front{
+    background-image: url(../images/issuers/master-ing-front.png), url(../images/card-front-background.png);
+}
+.skeuocard.product-mastercard.issuer-master-hsbc .face.front{
+    background-image: url(../images/issuers/master-hsbc-front.png), url(../images/card-front-background.png);
+}
+.skeuocard.product-mastercard.issuer-master-deniz .face.front{
+    background-image: url(../images/issuers/master-deniz-front.png), url(../images/card-front-background.png);
+}
+.skeuocard.product-visa.issuer-visa-garanti .face.front{
+    background-image: url(../images/issuers/visa-garanti-front.png), url(../images/card-front-background.png);
+}
+.skeuocard.product-visa.issuer-visa-isbank .face.front{
+    background-image: url(../images/issuers/visa-isbank-front.png), url(../images/card-front-background.png);
+}
+.skeuocard.product-visa.issuer-visa-akbank .face.front{
+    background-image: url(../images/issuers/visa-akbank-front.png), url(../images/card-front-background.png);
+}
+.skeuocard.product-visa.issuer-visa-yapikredi .face.front{
+    background-image: url(../images/issuers/visa-yapikredi-front.png), url(../images/card-front-background.png);
+}
+.skeuocard.product-visa.issuer-visa-ing .face.front{
+    background-image: url(../images/issuers/visa-ing-front.png), url(../images/card-front-background.png);
+}
+.skeuocard.product-visa.issuer-visa-hsbc .face.front{
+    background-image: url(../images/issuers/visa-hsbc-front.png), url(../images/card-front-background.png);
+}
+.skeuocard.product-visa.issuer-visa-deniz .face.front{
+    background-image: url(../images/issuers/visa-deniz-front.png), url(../images/card-front-background.png);
+}
+
+.credit-card-input.no-js{
+    font-size:15px;
+}
+.credit-card-input.no-js .card-section{
+    margin-bottom:10px;
+}
+.credit-card-input.no-js .card-line{
+    margin-bottom:10px;
+}
+.credit-card-input.no-js .card-line label{
+    display:inline-block;
+    width:120px;
+}
+#cc_number{
+    width:200px;
+}

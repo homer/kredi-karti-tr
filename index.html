@@ -6,6 +6,7 @@
     <title>Skeuocard by kenkeiter</title>
     <link rel="stylesheet" href="styles/skeuocard.reset.css" />
     <link rel="stylesheet" href="styles/skeuocard.css" />
+    <link rel="stylesheet" href="styles/trcard.css" />
     <link rel="stylesheet" href="styles/demo.css">
     <script src="javascripts/vendor/cssua.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -47,22 +48,24 @@
               <option value="amex">American Express</option>
               <option value="dinersclubintl">Diners Club</option>
             </select>
-            <label for="cc_number">Card Number</label>
+            <label for="cc_number">Kredi Kartı Numarası</label>
             <input type="text" name="cc_number" id="cc_number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" size="19">
-            <label for="cc_exp_month">Expiration Month</label>
+            <label for="cc_exp_month">Son Kullanım Tarihi Ay</label>
             <input type="text" name="cc_exp_month" id="cc_exp_month" placeholder="00">
-            <label for="cc_exp_year">Expiration Year</label>
+            <label for="cc_exp_year">Son Kullanım Tarihi Yıl</label>
             <input type="text" name="cc_exp_year" id="cc_exp_year" placeholder="00">
-            <label for="cc_name">Cardholder's Name</label>
+            <label for="cc_name">Kart Sahibinin Adı Soyadı</label>
             <input type="text" name="cc_name" id="cc_name" placeholder="John Doe">
-            <label for="cc_cvc">Card Validation Code</label>
+            <label for="cc_cvc">Güvenlik Kodu</label>
             <input type="text" name="cc_cvc" id="cc_cvc" placeholder="123" maxlength="3" size="3">
           </div>
 
         <!-- END FORM -->
       </section>
       <section>
-<h3>Give it a try.</h3>
+<h3>Gerçek Bir Kartla Deneyin!</h3>
+
+<p>Türkiyedeki bankaların BIN numaraları için faydalı <a href="https://gist.github.com/berkayunal/1595676">bir link</a></p>
 
 <p>If you have a recent browser, the credit card input above will be progressively enhanced by Skeuocard. To begin, simply enter your card number (don't worry, it's not sent outside your browser). If that's too fishy for you (and I don't blame you), you can also try these valid credit card numbers to get the feel of it:</p>
 
